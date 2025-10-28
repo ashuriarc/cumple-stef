@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Happy Birthday to you.</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!--  Agregar icono para la pagina -->
+  <link rel="icon" type="image/png" href="https://i.pinimg.com/736x/8d/a8/7b/8da87b355596b7ca4066b236be38b0f1.jpg" />
+</head>
+
+
+<script>
+    // Toggle play/pause button
+    const playButton = document.querySelector('.play-button');
+    let isPlaying = false;
+
+    playButton.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        playButton.innerHTML = isPlaying ? 
+            '<i class="fas fa-pause fa-lg"></i>' : 
+            '<i class="fas fa-play fa-lg"></i>';
+    });
+</script>
+<body>
+  <main class="shell" role="main" aria-labelledby="title">
+    <header>
+      <div class="title">
+        <div class="logo" aria-hidden="true">E</div>
+        <div>
+          <h1 id="title">Para Estef. </h1>
+          <p class="lead">✦ “Todo lo que se escribe con el alma encuentra su lugar, incluso si nadie lo lee.”</p>
+        </div>
+      </div>
+      <div>
+        <small class="lead">Capítulos: <strong id="total-pages">0</strong></small>
+      </div>
+    </header>
+
+    <section class="book" aria-label="Libro interactivo">
+      <nav class="controls" aria-hidden="false">
+        <button id="prev" class="btn" aria-label="Anterior (←)"><span class="icon">◀</span></button>
+        <button id="next" class="btn" aria-label="Siguiente (→)"><span class="icon">▶</span></button>
+      </nav>
+
+      <article class="card" id="viewer" tabindex="0">
+        <div class="meta">
+          <div class="page-num" id="page-indicator">Página 1 / 1</div>
+          <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+        </div>
+
+        <!-- Páginas (cada sección es un capítulo). Edita el contenido -->
+        <section class="page active" data-page="0" aria-labelledby="cap-0">
+          <h2 id="cap-0">Antes de todo</h2>
+          <p>
+            Ella escribe estas páginas no para mirar atrás, sino para dar voz a lo que aún respira en silencio. 
+            No es una historia de pérdidas, sino de encuentros que dejaron huellas. Entre risas compartidas y silencios necesarios, nació una amistad que desafió el tiempo y la distancia. Este libro no busca explicar, sino recordar lo simple y lo inmenso de haber coincidido. 
+            Son fragmentos escritos desde la calma, la gratitud y la curiosidad por lo que todavía podría ser. Porque hay vínculos que no se rompen: solo cambian de ritmo. Aquí no se añora. Aquí se celebra lo que fue… y lo que, de algún modo, sigue siendo.
+          </p>
+        </section>
+
+        <section class="page" data-page="1" aria-labelledby="cap-1">
+          <h2 id="cap-1">El primer día</h2>
+          <p>
+            No hubo un inicio grandioso, ni una escena que marcara el destino. Simplemente, dos caminos que se cruzaron sin hacer ruido, como si el universo hubiera decidido jugar con la casualidad.
+            La conexión fue silenciosa, de esas que no necesitan demasiadas explicaciones. Hubo una comodidad extraña, como si se hubieran reconocido de antes, como si entre sus gestos y risas ya existiera una historia escrita desde algún rincón invisible. <br>
+            </p>
+            <p>
+            Ella, sin darse cuenta, comenzó a escribir mentalmente cada instante, cada frase, cada sonrisa. No con la intención de recordarlo todo, sino porque algo en su interior sabía que, algún día, esas memorias tendrían que ser contadas. No para revivir lo que fue, sino para agradecer lo que aún permanece.
+        </p>
+          
+        </section>
+
+        <section class="page" data-page="2" aria-labelledby="cap-2">
+          <h2 id="cap-2">Lo que rompió el silencio</h2>
+          <p>
+            No fue la furia quien quebró aquel lazo, sino el susurro inadvertido de los días, la influencia tenue pero persistente de una presencia ajena que jamás debió interponerse. Aquella figura, envuelta en promesas inciertas y un afecto confuso, fue poco a poco erigiendo muros donde antes sólo había puentes.
+            Ella, en su ingenuidad, creyó posible sostener dos mundos que jamás podrían convivir. Intentó ser justa, fiel a todos y a sí misma, sin advertir que en su esfuerzo por no perderlo todo, acabaría perdiendo lo más sincero que había tenido. 
+            </p> 
+
+            <p>
+            No hubo dolo en su proceder, sólo la torpeza de quien ama es mal guiada por el temor y la duda.
+            Hoy lo comprende. Hay errores que no se gritan, se expían en silencio; culpas que no reclaman perdón, porque ya son castigo suficiente. Y en las noches en que el recuerdo retorna <i>—con el eco suave de lo que fue—</i>, ella no implora redención… sólo la oportunidad de que, algún día, esa herida deje de pronunciar su nombre con tanto pesar.
+          </p>
+        </section>
+
+        <section class="page" data-page="3" aria-labelledby="cap-3">
+          <h2 id="cap-3">Cuando vuelven los ecos</h2>
+          <p>
+            El tiempo, con su paso silencioso, suavizó las sombras que un día separaron sus caminos. No hubo disculpas largas ni gestos dramáticos, sólo un saludo sencillo que, sin saberlo, abrió la puerta a algo que aún latía.
+
+            Ella temía encontrar indiferencia, pero halló calidez en la voz que tanto había extrañado. No era el mismo vínculo, y sin embargo, bastó una conversación para entender que lo esencial nunca se había marchado.
+
+            Desde entonces, sus palabras fluyen con prudencia, como si cada una buscara remendar el hilo que el silencio desgastó. Tal vez no todo vuelva a ser igual… pero hay afectos que, aun después de romperse, encuentran la manera de volver a respirar.
+          </p>
+        </section>
+
+        <section class="page" data-page="4" aria-labelledby="cap-4">
+          <h2 id="cap-4">Permanecer</h2>
+          <p>
+            Hay vínculos que no necesitan promesas para sostenerse; bastan los recuerdos que aún saben sonreír. En cada palabra que cruzan, ella percibe una familiaridad que ninguna ausencia logró borrar, una ternura que sobrevive incluso al paso del tiempo.
+
+            Ya no busca explicaciones. Entendió que algunas heridas se curan en silencio, y que el perdón no siempre llega con palabras, sino con la simple voluntad de quedarse un poco más.
+
+            Así, en la distancia que ahora los separa, ella encuentra consuelo. No en la cercanía física, sino en la certeza de que, a pesar de todo, hay un espacio reservado para ellas en el vasto mapa de sus vidas. Porque hay amores que no se pierden; sólo cambian de forma.
+          </p>
+        </section>
+
+        <section class="page" data-page="5" aria-labelledby="cap-5">
+          <h2 id="cap-4">Feliz cumpleaños</h2>
+          <p>
+            Si tus ojos se posaron en estas líneas, es porque, de algún modo, su eco ha resonado en tu corazón. 
+            No son sino fragmentos de una historia imperfecta, escrita con la esperanza de que, aun entre las grietas del tiempo
+             y la distancia, el afecto encuentre su sendero y florezca de nuevo.
+          </p>
+          <p>
+            En este día que celebra tu existencia, no sólo deseo para ti la dicha que ilumina, sino también la serenidad
+             que consuela y la valentía que impulsa a abrazar todo aquello que aún está por venir. 
+             Que este nuevo ciclo te regale instantes de sosiego, risas sinceras y la certeza de que, incluso tras la
+              más feroz de las tormentas, siempre hay un refugio donde el alma puede reposar en calma.
+          </p>
+          <P>
+            Gracias por ser parte de mi historia, por las memorias que guardo con ternura, y por permitirme,
+             aunque desde la distancia, seguir tejiendo contigo los hilos de un lazo que no se deshace.
+          </P>
+          <p>
+            Feliz cumpleaños, Estef.
+            Que la vida te colme de todo cuanto mereces —y más—. Sé feliz, porque mi dicha también florece junto a la tuya.
+            Eres, sin duda, lo más preciado que guarda mi corazón.
+          </p>
+        </section>
+
+
+        <!-- Agrega más secciones/capítulos copiando el bloque anterior y aumentando data-page -->
+        <footer class="book-actions" aria-hidden="false">
+          <div class="inline-actions">
+            <button id="toc" class="tiny-btn" title="Ver índice">Índice</button>
+            <button id="print" class="tiny-btn" title="Descargar / Imprimir">Guardar / Imprimir</button>
+          </div>
+          <div>
+            <small class="lead" id="hint">También puedes usar las teclas ← y → para avanzar </small>
+          </div>
+        </footer>
+      </article>
+    </section>
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>

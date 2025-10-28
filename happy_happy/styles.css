@@ -1,0 +1,167 @@
+:root{
+    --bg: #0f1724;
+    --card: #0b1220;
+    --text: #e6eef8;
+    --muted: #9fb1c8;
+    --accent: #7dd3fc;
+    --radius: 14px;
+    --glass: rgba(255,255,255,0.03);
+    --max-w: 820px;
+  }
+ 
+/* AGREGAR ICON DE URL EXTERNA PARA EL LOGO DE LA WEBSITE */
+
+
+.marquee {
+    white-space: nowrap;
+    overflow: hidden;
+    position: relative;
+}
+
+.marquee span {
+    display: inline-block;
+    animation: marquee 15s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+  *{box-sizing:border-box}
+  html,body{height:100%}
+  body{
+    margin:0;
+    font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background: linear-gradient(180deg,#071126 0%, #051023 100%);
+    color:var(--text);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:28px;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  .shell{
+    width:100%;
+    max-width:var(--max-w);
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    border-radius:20px;
+    padding:20px;
+    box-shadow: 0 10px 30px rgba(220, 221, 225, 0.6);
+    position:relative;
+    overflow:hidden;
+  }
+
+  header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .title{
+    display:flex;
+    gap:12px;
+    align-items:center;
+  }
+  .logo{
+    width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var--(#090509, #1e0c2f));
+    display:flex;align-items:center;justify-content:center;font-weight:600;color:rgb(230, 227, 227);
+    box-shadow:0 6px 18px rgba(231, 30, 187, 0.45);
+  }
+  h1{font-size:18px;margin:0}
+  p.lead{margin:0;color:var(--muted);font-size:13px}
+
+  .book{
+    display:grid;
+    grid-template-columns: 64px 1fr;
+    gap:16px;
+    align-items:stretch;
+  }
+
+  /* side nav (arrows) */
+  .controls{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    align-items:center;
+    padding-top:6px;
+  }
+  .btn{
+    width:52px;height:52px;border-radius:12px;border:none;background:var(--glass);
+    display:flex;align-items:center;justify-content:center;color:var(--text);
+    cursor:pointer;backdrop-filter: blur(4px);transition:transform .18s ease, background .12s;
+  }
+  .btn:active{transform:scale(.98)}
+  .btn[disabled]{opacity:.35;cursor:default}
+  .icon{font-size:18px}
+
+  /* content card */
+  .card{
+    background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+    border-radius:var(--radius);
+    padding:28px;
+    min-height:360px;
+    position:relative;
+    overflow:hidden;
+  }
+
+  .page{
+    display:none;
+    opacity:0;
+    transform:translateX(10px);
+    transition:opacity .36s ease, transform .36s ease;
+  }
+  .page.active{
+    display:block;
+    opacity:1;
+    transform:none;
+  }
+
+  .meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:12px;
+    margin-bottom:18px;
+  }
+  .meta .page-num{color:var(--muted);font-size:13px}
+  .meta .progress{
+    height:8px;background:rgba(255,255,255,0.04);border-radius:999px;overflow:hidden;width:220px;
+  }
+  .progress > i{display:block;height:100%;background:linear-gradient(90deg,var(--accent), #60a5fa);width:0%}
+
+  h2{margin:0 0 10px 0;font-size:16px}
+  p{line-height:1.5;color:var(--text);margin:0 0 12px 0}
+  small{color:var(--muted)}
+
+  footer.book-actions{
+    margin-top:16px;display:flex;gap:8px;align-items:center;justify-content:space-between;
+  }
+  .inline-actions{display:flex;gap:8px;align-items:center}
+  .tiny-btn{padding:8px 12px;border-radius:10px;border:none;background:rgba(255,255,255,0.03);color:var(--muted);cursor:pointer}
+  /* 🌸 Fondo animado para la sección 6 */
+.page[data-page="5"] {
+  position: relative;
+  overflow: hidden;
+}
+
+
+  /* mobile layout */
+  @media (max-width:720px){
+    .book{grid-template-columns: 1fr; gap:12px}
+    .controls{flex-direction:row;justify-content:space-between;padding:0}
+    .btn{width:44px;height:44px}
+    .logo{width:42px;height:42px}
+    .meta .progress{width:120px}
+  }
+
+  /* accesibility focus */
+  .btn:focus, .tiny-btn:focus{outline:3px solid rgba(125,211,252,0.15); outline-offset:2px}
